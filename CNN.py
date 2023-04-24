@@ -1,4 +1,5 @@
 #Testing Keras
+
 # from tensorflow.keras.models import Sequential
 # from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
@@ -6,7 +7,7 @@ from tensorflow import keras
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
-CNN = Sequential(name="Sequential_CNN")
+CNN = Sequential(name="Sequential CNN")
 
 # layer 1
 CNN.add(Conv2D(16, kernel_size=(3, 3),
