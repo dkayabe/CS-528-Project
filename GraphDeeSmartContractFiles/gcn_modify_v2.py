@@ -18,7 +18,7 @@ class GCN_MODIFY_V2(nn.Module):
                                                 out_features=f, activation=nn.ReLU(inplace=True),
                                                 adj_sq=adj_sq, scale_identity=scale_identity) for layer, f in enumerate(filters)]))
         # Batching normalization layers
-        self.bn == nn.BatchNormld(filters[-1])
+        self.bn = nn.BatchNorm1d(filters[-1])
         # Fully connected layers
         fc = []
         if dropout > 0:
@@ -27,7 +27,7 @@ class GCN_MODIFY_V2(nn.Module):
             fc.append(nn.Linear(filters[-1], n_hidden))
             if dropout > 0:
                 fc.append(nn.Dropout(p=dropout))
-            fc.append(nn.BatchNormld(n_hidden))
+            fc.append(nn.BatchNorm1d(n_hidden))
             n_last = n_hidden
         else:
             n_last = filters[-1]
