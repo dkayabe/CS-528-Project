@@ -15,7 +15,7 @@ class GCN_MODIFY_V2(nn.Module):
         super(GCN_MODIFY_V2, self).__init__()
         # Graph convolution layers
         self.gconv = nn.Sequential(*([GraphConv(in_features=in_features if layer == 0 else filters[layer - 1],
-                                                out_features=f, activation=nn.ReLU(inplace=True),
+                                                out_features=f, activation=nn.Sigmoid(),
                                                 adj_sq=adj_sq, scale_identity=scale_identity) for layer, f in enumerate(filters)]))
         # Batching normalization layers
         self.bn = nn.BatchNorm1d(filters[-1])
