@@ -17,6 +17,7 @@ from models.gcn_origin import GCN_ORIGIN
 from models.gcn_modify_v1 import GCN_MODIFY_V1
 from models.gcn_modify_v2 import GCN_MODIFY_V2
 from models.gcn_modify_v3 import GCN_MODIFY_V3
+from models.gcn_modify_v4 import GCN_MODIFY_V4
 from models.gat import GAT
 from sklearn import metrics
 
@@ -226,6 +227,14 @@ for fold_id in range(n_folds):
                            scale_identity=args.scale_identity).to(args.device)
     elif args.model == 'gcn_modify_v3':
         model = GCN_MODIFY_V3(in_features=loaders[0].dataset.num_features,
+                           out_features=loaders[0].dataset.num_classes,
+                           n_hidden=args.n_hidden,
+                           filters=args.filters,
+                           dropout=args.dropout,
+                           adj_sq=args.adj_sq,
+                           scale_identity=args.scale_identity).to(args.device)
+    elif args.model == 'gcn_modify_v4':
+        model = GCN_MODIFY_V4(in_features=loaders[0].dataset.num_features,
                            out_features=loaders[0].dataset.num_classes,
                            n_hidden=args.n_hidden,
                            filters=args.filters,
