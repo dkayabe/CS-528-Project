@@ -1,0 +1,5 @@
+Test set (epoch 10): Average loss: 0.3488, Accuracy: (85.15%), Recall: (78.75%), Precision: (80.78%), F1-Score: (78.85%), FPR: (0.12%)  sec/iter: 0.0434
+Test set (epoch 10): Average loss: 0.3291, Accuracy: (84.55%), Recall: (77.53%), Precision: (77.19%), F1-Score: (76.74%), FPR: (0.12%)  sec/iter: 0.0424
+Test set (epoch 10): Average loss: 0.2474, Accuracy: (88.52%), Recall: (92.39%), Precision: (77.97%), F1-Score: (84.06%), FPR: (0.12%)  sec/iter: 0.0500
+Test set (epoch 10): Average loss: 0.2442, Accuracy: (91.16%), Recall: (90.15%), Precision: (87.00%), F1-Score: (87.98%), FPR: (0.09%)  sec/iter: 0.0414
+Test set (epoch 10): Average loss: 0.2755, Accuracy: (85.30%), Recall: (80.15%), Precision: (70.19%), F1-Score: (74.11%), FPR: (0.14%)  sec/iter: 0.0374
