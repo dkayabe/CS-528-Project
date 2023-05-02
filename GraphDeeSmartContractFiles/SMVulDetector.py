@@ -346,6 +346,17 @@ for fold_id in range(n_folds):
         F1 = 100. * F1 / count
         FPR = fp / (fp + tn)
 
+        log_file = '{}_log.txt'.format(args.model)
+        log_dir = os.path.join('.', 'logs')
+        if not os.path.exists(log_dir):
+        	os.makedirs(log_dir)
+        log_path = os.path.join(log_dir, log_file)
+        with open(log_path, 'a') as f:
+        	f.write('Test set (epoch {}): Average loss: {:.4f}, Accuracy: ({:.2f}%), Recall: ({:.2f}%), Precision: ({:.2f}%), '
+            		'F1-Score: ({:.2f}%), FPR: ({:.2f}%)  sec/iter: {:.4f}\n'.format(
+               		 epoch + 1, test_loss / n_samples, accuracy, recall, precision, F1, FPR,
+             		 (time.time() - start) / len(test_loader))
+             	)
         print(
             'Test set (epoch {}): Average loss: {:.4f}, Accuracy: ({:.2f}%), Recall: ({:.2f}%), Precision: ({:.2f}%), '
             'F1-Score: ({:.2f}%), FPR: ({:.2f}%)  sec/iter: {:.4f}\n'.format(
